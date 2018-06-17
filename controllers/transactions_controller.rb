@@ -1,0 +1,6 @@
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require_relative( '../models/transactions.rb' )
+require_relative( '../models/merchants.rb' )
+require_relative( '../models/tags.rb' )
+also_reload( '../models/*' )
