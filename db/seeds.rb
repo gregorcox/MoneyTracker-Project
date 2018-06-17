@@ -45,3 +45,28 @@ tag8 = Tag.new({
   "name" => "Other"
 })
 tag8.save()
+
+merchant1 = Merchant.new({
+  "name" => "Sainsburys"
+})
+merchant1.save()
+
+merchant2 = Merchant.new({
+  "name" => "Amazon"
+})
+merchant2.save()
+
+merchant3 = Merchant.new({
+  "name" => "Cineworld"
+})
+merchant3.save()
+
+merchant4 = Merchant.new({
+  "name" => "Scotrail"
+})
+merchant4.save()
+
+merchant5 = Merchant.new({
+  "name" => "Asos"
+})
+merchant5.save()
