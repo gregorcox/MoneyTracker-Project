@@ -18,6 +18,13 @@ class Transaction
     return Tag.new(tag)
   end
 
+  def merchant()
+    sql = "SELECT * FROM merchants WHERE id = $1"
+    values = [@merchant_id]
+    merchant = SqlRunner.run(sql, values).first
+    return Merchant.new(merchant)
+  end
+
   def save()
     sql = "INSERT INTO transactions
     (merchant_id, tag_id, amount)
