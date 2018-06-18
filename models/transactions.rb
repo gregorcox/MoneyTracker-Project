@@ -11,6 +11,13 @@ class Transaction
     @amount = options['amount'].to_i
   end
 
+  def tag()
+    sql = "SELECT * FROM tags WHERE id = $1"
+    values = [@tag_id]
+    tag = SqlRunner.run(sql, values).first
+    return Tag.new(tag)
+  end
+
   def save()
     sql = "INSERT INTO transactions
     (merchant_id, tag_id, amount)
