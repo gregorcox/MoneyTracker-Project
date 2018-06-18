@@ -22,7 +22,7 @@ tag3 = Tag.new({
 tag3.save()
 
 tag4 = Tag.new({
-  "name" => "Eating Out"
+  "name" => "Going Out"
 })
 tag4.save()
 
