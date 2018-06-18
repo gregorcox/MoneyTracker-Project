@@ -9,6 +9,18 @@ get '/tags' do
   erb ( :"tags/index" )
 end
 
+#NEW
+get '/tags/new' do
+  erb ( :"tags/new" )
+end
+
+#CREATE
+post '/tags' do
+  tag = Tag.new(params)
+  tag.save
+  redirect to("/tags")
+end
+
 #SHOW
 get '/tags/:id' do
   @tag = Tag.find(params['id'].to_i)
