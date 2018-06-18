@@ -30,5 +30,5 @@ end
 #EDIT
 get '/tags/:id/edit' do
   @tag = Tag.find(params[:id].to_i)
-  erb( :"tags/edit )
+  erb( :"tags/edit" )
 end
