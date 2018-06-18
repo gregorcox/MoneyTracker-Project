@@ -9,7 +9,7 @@
   <% for transaction in @transactions %>
   <tr>
     <td><%= transaction.merchant_id %></a></td>
-    <td><%=transaction.tag_id  %></td>
+    <td><%=transaction.tag().name  %></td>
     <td><%= transaction.amount %></td>
   </tr>
   <% end %>
