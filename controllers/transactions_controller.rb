@@ -27,7 +27,7 @@ end
 
 #SHOW
 get '/transactions/:id' do
-  @transaction = Tag.find(params['id'].to_i)
+  @transaction = Transaction.find(params['id'].to_i)
   erb(:"transactions/show")
 end
 
