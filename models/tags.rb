@@ -14,7 +14,7 @@ class Tag
     (name)
     VALUES
     ($1)
-    RETURNING *"
+    RETURNING id"
     values = [@name]
     tag_data = SqlRunner.run(sql, values)
     @id = tag_data.first()['id'].to_i
