@@ -43,6 +43,14 @@ class Transaction
     return result
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM transactions
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Transaction.new( results.first )
+  end
+
   def update()
     sql = "UPDATE transactions
       SET
