@@ -35,6 +35,15 @@ class Tag
     return Tag.new( results.first )
   end
 
+  def update()
+    sql = "UPDATE tags
+    SET
+    (name) = ($1)
+    WHERE id = $2"
+    values = [@name]
+    SqlRunner.run( sql, values )
+  end
+
   def delete()
     sql = "DELETE FROM tags
     WHERE id = $1"
@@ -46,5 +55,7 @@ class Tag
     sql = "DELETE FROM tags;"
     SqlRunner.run(sql)
   end
+
+
 
 end
