@@ -26,3 +26,9 @@ get '/tags/:id' do
   @tag = Tag.find(params['id'].to_i)
   erb(:"tags/show")
 end
+
+#EDIT
+get '/tags/:id/edit' do
+  @tag = Tag.find(params[:id].to_i)
+  erb( :"tags/edit )
+end
