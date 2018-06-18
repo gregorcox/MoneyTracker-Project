@@ -35,13 +35,13 @@ end
 get '/transactions/:id/edit' do
   @tags = Tag.all()
   @merchants = Merchant.all()
-  @transactions = Transaction.find(params['id'])
+  @transaction = Transaction.find(params['id'])
   erb( :"transactions/edit" )
 end
 
 #UPDATE
 post '/transactions/:id' do
   @transaction = Transaction.new(params)
-  @transation.update
+  @transaction.update
   redirect to("/transactions")
 end
