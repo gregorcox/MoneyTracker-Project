@@ -18,8 +18,24 @@ get '/transactions/new' do
   erb ( :"transactions/new" )
 end
 
+#CREATE
 post '/transactions' do
   transaction = Transaction.new(params)
   transaction.save
+  redirect to("/transactions")
+end
+
+#EDIT
+get '/transactions/:id/edit' do
+  @tags = Tag.all()
+  @merchants = Merchants.all()
+  @transactions = Transaction.find(params['id'])
+  erb( :"transactions/edit" )
+end
+
+#UPDATE
+post '/transactions/:id' do
+  @transaction = Transaction.new(params)
+  @transation.update
   redirect to("/transactions")
 end
