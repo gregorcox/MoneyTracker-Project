@@ -47,8 +47,8 @@ post '/transactions/:id' do
 end
 
 #DELETE
-post '/transaction/:id/delete' do
+post '/transactions/:id/delete' do
   @transaction = Transaction.find(params[:id].to_i)
   @transaction.delete()
-  redirect to '/transactions'
+  redirect to ("/transactions")
 end
