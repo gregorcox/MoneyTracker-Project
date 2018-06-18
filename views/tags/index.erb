@@ -1,7 +1,7 @@
 <h1>tags</h1>
 
 <% for tag in @tags %>
-  <p><strong>Name:</strong> <%= tag.name %> </p>
+  <p><strong>Name:</strong> <%= tag.name %>  (<a href="/tags/<%=tag.id  %>/edit">Edit</a>) </p>
 <% end %>
 
 <p> <a href="/tags/new"> Create a custom tag</a> </p>

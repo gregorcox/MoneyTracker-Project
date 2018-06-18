@@ -1,7 +1,7 @@
 <h1>merchants</h1>
 
 <% for merchant in @merchants %>
-  <p><strong>Name:</strong> <%= merchant.name %> </p>
+  <p><strong>Name:</strong> <%= merchant.name %> (<a href="/merchants/<%=merchant.id  %>/edit">Edit</a>)</p>
 <% end %>
 
 <p> <a href="/merchants/new"> Add a new merchant</a> </p>
