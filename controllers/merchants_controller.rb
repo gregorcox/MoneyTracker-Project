@@ -10,6 +10,18 @@ get '/merchants' do
   erb ( :"merchants/index" )
 end
 
+#NEW
+get '/merchants/new' do
+  erb ( :"merchants/new" )
+end
+
+#CREATE
+post '/merchants' do
+  merchant = Merchant.new(params)
+  merchant.save
+  redirect to("/merchants")
+end
+
 #SHOW
 get '/merchants/:id' do
   @merchant = Merchant.find(params['id'].to_i)
