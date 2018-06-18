@@ -2,6 +2,8 @@
 
 <% for merchant in @merchants %>
   <p><strong>Name:</strong> <%= merchant.name %> (<a href="/merchants/<%=merchant.id  %>/edit">Edit</a>)</p>
+  <p><form action="/merchants/<%= merchant.id %>/delete" method="POST">
+      <input type="submit" value="Delete" /></p>
 <% end %>
 
 <p> <a href="/merchants/new"> Add a new merchant</a> </p>
