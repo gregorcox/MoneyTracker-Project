@@ -40,3 +40,10 @@ post '/merchants/:id' do
   @merchant.update
   redirect to("/merchants")
 end
+
+#DELETE
+post '/merchants/:id/delete' do
+  @merchant = Merchant.find(params[:id].to_i)
+  @merchant.delete()
+  redirect to ("/merchants")
+end
