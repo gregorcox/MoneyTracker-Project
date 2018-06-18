@@ -32,3 +32,10 @@ get '/tags/:id/edit' do
   @tag = Tag.find(params[:id].to_i)
   erb( :"tags/edit" )
 end
+
+#UPDATE
+post '/tags/:id' do
+  @tag = Tag.new(params)
+  @tag.update()
+  redirect to("/tags")
+end
