@@ -25,6 +25,12 @@ post '/transactions' do
   redirect to("/transactions")
 end
 
+#SHOW
+get '/transactions/:id' do
+  @transaction = Tag.find(params['id'].to_i)
+  erb(:"transactions/show")
+end
+
 #EDIT
 get '/transactions/:id/edit' do
   @tags = Tag.all()
