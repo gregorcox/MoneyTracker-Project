@@ -22,11 +22,15 @@
     </tr>
     <% end  %>
   <% end %>
-  <tfoot>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>total</td>
-    </tr>
-  </tfoot>
+  <tr>
+    <td></td>
+    <td></td>
+    <% total = 0  %>
+    <% for transaction in @transactions  %>
+      <% if transaction.tag.name == @tag.name()  %>
+        <% total = total + transaction.amount  %>
+      <% end %>
+    <% end  %>
+    <td>£<%= total / 100.00  %></td>
+  </tr>
 </table>
