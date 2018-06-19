@@ -10,7 +10,7 @@
   <tr>
     <td><%= transaction.merchant().name %></a></td>
     <td><%=transaction.tag().name  %></td>
-    <td>£<%= transaction.amount %></td>
+    <td><%= transaction.pretty_amount() %></td>
     <td><a href="/transactions/<%=transaction.id  %>/edit"> Edit</a></td>
     <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input type="submit" value="Delete" />
