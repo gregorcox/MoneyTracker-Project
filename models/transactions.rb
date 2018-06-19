@@ -12,7 +12,7 @@ class Transaction
   end
 
   def pretty_amount()
-    return "£#{amount}"
+    return "£#{@amount}"
   end
 
   def tag()
