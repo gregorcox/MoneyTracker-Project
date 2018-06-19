@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/tags' )
+require_relative( '../models/tags')
 also_reload( '../models/*' )
 
 #INDEX
@@ -23,6 +24,7 @@ end
 
 #SHOW
 get '/tags/:id' do
+  @transactions = Transaction.all()
   @tag = Tag.find(params['id'].to_i)
   erb(:"tags/show")
 end
