@@ -17,13 +17,15 @@
       </form></td>
   </tr>
   <% end %>
-  <tfoot>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>total</td>
-    </tr>
-  </tfoot>
+  <tr>
+    <td></td>
+    <td></td>
+    <% total = 0  %>
+    <% for transaction in @transactions  %>
+    <% total = total + transaction.amount  %>
+    <% end  %>
+    <td>£<%= total / 100.00  %></td>
+  </tr>
 </table>
 
 <p> <a href="/transactions/new"> Add a new transaction</a> </p>

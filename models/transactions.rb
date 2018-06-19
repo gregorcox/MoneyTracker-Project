@@ -14,8 +14,7 @@ class Transaction
   def pretty_amount()
     return "£#{@amount / 100.00}"
   end
-
-
+  
   def tag()
     sql = "SELECT * FROM tags WHERE id = $1"
     values = [@tag_id]
