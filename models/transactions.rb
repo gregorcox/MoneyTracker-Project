@@ -12,7 +12,7 @@ class Transaction
   end
 
   def pretty_amount()
-    return "£#{@amount / 100.00}" 
+    return "£#{@amount / 100.00}"
   end
 
 
