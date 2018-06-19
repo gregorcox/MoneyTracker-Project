@@ -11,6 +11,10 @@ class Transaction
     @amount = options['amount'].to_i
   end
 
+  def pretty_amount()
+    return "£#{amount}"
+  end
+
   def tag()
     sql = "SELECT * FROM tags WHERE id = $1"
     values = [@tag_id]
