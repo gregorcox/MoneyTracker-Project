@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/merchants.rb' )
+require_relative( '../models/transactions.rb' )
 also_reload( '../models/*' )
 
 
@@ -24,6 +25,7 @@ end
 
 #SHOW
 get '/merchants/:id' do
+  @transactions = Transaction.all()
   @merchant = Merchant.find(params['id'].to_i)
   erb(:"merchants/show")
 end
