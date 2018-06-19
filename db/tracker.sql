@@ -16,5 +16,6 @@ CREATE TABLE transactions(
   id SERIAL4 primary key,
   merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE,
   tag_id INT4 REFERENCES tags(id) ON DELETE CASCADE,
-  amount INT4
+  amount INT4,
+  day DATE 
 );
