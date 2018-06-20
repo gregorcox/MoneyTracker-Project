@@ -21,7 +21,7 @@ class Tag
   end
 
   def self.all()
-    sql = "SELECT * FROM tags"
+    sql = "SELECT * FROM tags ORDER BY name"
     tags = SqlRunner.run( sql )
     result = tags.map { |tag| Tag.new( tag ) }
     return result
