@@ -42,7 +42,7 @@ class Transaction
   end
 
   def self.all()
-    sql = "SELECT * FROM transactions"
+    sql = "SELECT * FROM transactions ORDER BY timestamp DESC"
     transactions = SqlRunner.run( sql )
     result = transactions.map { |transaction| Transaction.new( transaction ) }
     return result
