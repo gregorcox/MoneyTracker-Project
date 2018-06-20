@@ -1,14 +1,26 @@
+body {
+  background: #d9e1e8;
+  font-family: "Century Gothic";
+}
+
+.container {
+  margin: 5px auto;
+  background: white;
+  height: 100%;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #282c37;
+    width: 100%;
 }
 
 li {
     float: left;
-    font-family: verdana;
+    font-family: "Century Gothic";
 }
 
 li a {
@@ -20,7 +32,7 @@ li a {
 }
 
 li a:hover {
-    background-color: #111;
+    background-color: #2b90d9;
 }
 
 .active {

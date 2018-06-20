@@ -1,3 +1,5 @@
+<div class="container">
+
 <form method="post" action="/tags/<%= @tag.id %>">
   <label for="name">Name:</label>
     <input id="name" type="text" name="name" value="<%= @tag.name  %>" />
@@ -5,3 +7,5 @@
   <input type="submit" value="Update tag" />
 
 </form>
+
+</div>
