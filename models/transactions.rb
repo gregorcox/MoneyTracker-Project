@@ -2,19 +2,20 @@ require_relative('../db/sqlrunner.rb')
 
 class Transaction
 
-  attr_reader(:merchant_id, :tag_id, :amount, :id)
+  attr_reader(:merchant_id, :tag_id, :amount, :id, :timestamp)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @merchant_id = options['merchant_id'].to_i
     @tag_id = options['tag_id'].to_i
     @amount = options['amount'].to_i
+    @timestamp = options['timestamp']
   end
 
   def pretty_amount()
     return "£#{@amount / 100.00}"
   end
-  
+
   def tag()
     sql = "SELECT * FROM tags WHERE id = $1"
     values = [@tag_id]
@@ -31,11 +32,11 @@ class Transaction
 
   def save()
     sql = "INSERT INTO transactions
-    (merchant_id, tag_id, amount)
+    (merchant_id, tag_id, amount, timestamp)
     VALUES
-    ($1, $2, $3)
+    ($1, $2, $3, $4)
     RETURNING *"
-    values = [@merchant_id, @tag_id, @amount]
+    values = [@merchant_id, @tag_id, @amount, @timestamp]
     transaction_data = SqlRunner.run(sql, values)
     @id = transaction_data.first()['id'].to_i
   end
@@ -58,10 +59,10 @@ class Transaction
   def update()
     sql = "UPDATE transactions
       SET
-      (merchant_id, tag_id, amount) =
+      (merchant_id, tag_id, amount, timestamp) =
       ($1, $2, $3)
       WHERE id = $4"
-    values = [@merchant_id, @tag_id, @amount, @id]
+    values = [@merchant_id, @tag_id, @amount, @id, @timestamp]
     SqlRunner.run(sql, values)
   end
 
