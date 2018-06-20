@@ -27,7 +27,7 @@
     <% for transaction in @transactions  %>
     <% total = total + transaction.amount  %>
     <% end  %>
-    <td>£<%= total / 100.00  %></td>
+    <td><strong>£<%= total / 100.00  %></strong></td>
   </tr>
 </table>
 
