@@ -48,6 +48,16 @@ tag8 = Tag.new({
 })
 tag8.save()
 
+tag9 = Tag.new({
+  "name" => "Travel"
+})
+tag9.save()
+
+tag10 = Tag.new({
+  "name" => "Sports"
+})
+tag10.save()
+
 merchant1 = Merchant.new({
   "name" => "Sainsburys"
 })
@@ -117,7 +127,7 @@ transaction6 = Transaction.new({
   "merchant_id" => merchant2.id,
   "tag_id" => tag5.id,
   "amount" => 14000,
-  "timestamp" => Date.strptime('03-02-2001', '%d-%m-%Y')  
+  "timestamp" => Date.strptime('03-02-2001', '%d-%m-%Y')
 })
 transaction6.save()
 
