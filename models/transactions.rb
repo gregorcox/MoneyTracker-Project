@@ -60,9 +60,9 @@ class Transaction
     sql = "UPDATE transactions
       SET
       (merchant_id, tag_id, amount, timestamp) =
-      ($1, $2, $3)
-      WHERE id = $4"
-    values = [@merchant_id, @tag_id, @amount, @id, @timestamp]
+      ($1, $2, $3, $4)
+      WHERE id = $5"
+    values = [@merchant_id, @tag_id, @amount, @timestamp, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -77,9 +77,5 @@ class Transaction
     sql = "DELETE FROM transactions;"
     SqlRunner.run(sql)
   end
-
-
-
-
 
 end
