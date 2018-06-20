@@ -4,6 +4,7 @@
 
 <table>
   <tr>
+    <th>Date</th>
     <th>Merchant</th>
     <th>Tag</th>
     <th>Amount</th>
@@ -11,6 +12,7 @@
   <% for transaction in @transactions %>
     <% if transaction.merchant.name == @merchant.name()  %>
     <tr>
+      <td><%= transaction.timestamp()  %></td>
       <td><%= transaction.merchant().name %></a></td>
       <td><%=transaction.tag().name  %></td>
       <td><%= transaction.pretty_amount() %></td>
@@ -32,4 +34,5 @@
     <% end  %>
     <td>£<%= total / 100.00  %></td>
   </tr>
+  
 </table>
