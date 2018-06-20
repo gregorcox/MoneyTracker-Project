@@ -3,6 +3,14 @@ body {
   font-family: "Century Gothic";
 }
 
+h1 {
+  margin-left: 5%;
+}
+
+h4 {
+  margin-left: 5%;
+}
+
 .container {
   margin: 5px auto;
   background: white;
