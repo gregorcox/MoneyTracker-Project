@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th>Date</th>
     <th>Merchant</th>
     <th>Tag</th>
     <th>Amount</th>
   </tr>
   <% for transaction in @transactions %>
   <tr>
+    <td><%= transaction.timestamp()  %></td>
     <td><%= transaction.merchant().name %></a></td>
     <td><%=transaction.tag().name  %></td>
     <td><%= transaction.pretty_amount() %></td>
@@ -18,6 +20,7 @@
   </tr>
   <% end %>
   <tr>
+    <td></td>
     <td></td>
     <td></td>
     <% total = 0  %>
