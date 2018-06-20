@@ -18,7 +18,7 @@
       <td><%= transaction.merchant().name %></a></td>
       <td><%=transaction.tag().name  %></td>
       <td><%= transaction.pretty_amount() %></td>
-      <td><a href="/transactions/<%=transaction.id  %>/edit"> Edit</a></td>
+      <td><a href="/transactions/<%=transaction.id  %>/edit"> <i class="material-icons">mode_edit</i></a></td>
       <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
         <button type="submit" <i class="material-icons">delete</i></button>
       </form></td>
