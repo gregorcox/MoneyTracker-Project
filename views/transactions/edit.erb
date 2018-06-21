@@ -16,6 +16,8 @@
     </select>
   </label>
 
+  <br>
+
   <label>
     Select a tag:
     <select name="tag_id">
@@ -29,13 +31,19 @@
     </select>
   </label>
 
+  <br>
+
   <label for="amount">Amount £:</label>
   <input id="amount" type="number" step="0.01" name="amount" placeholder="0.00" value="<%= @transaction.amount.to_f / 100 %>" />
+
+  <br>
 
   <label for="timestamp">Date:</label>
   <input type="date" name="timestamp" id="timestamp" value="<%=@transaction.timestamp.to_s  %>"/>
 
-  <input type='submit' value="Add transaction">
+  <br>
+
+  <input class="submit" type='submit' value="Add transaction">
 </form>
 
 </div>
