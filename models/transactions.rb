@@ -16,6 +16,14 @@ class Transaction
     return "£#{@amount / 100.00}"
   end
 
+  def self.calculate_total(transactions_array)
+    total = 0
+    for transaction in transactions_array
+      total = total + transaction.amount()
+    end
+    return total
+  end
+
   def tag()
     sql = "SELECT * FROM tags WHERE id = $1"
     values = [@tag_id]
