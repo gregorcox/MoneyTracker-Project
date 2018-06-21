@@ -121,7 +121,7 @@ transaction4 = Transaction.new({
   "merchant_id" => merchant5.id,
   "tag_id" => tag3.id,
   "amount" => 3000,
-  "timestamp" => Date.strptime('04-06-2001', '%d-%m-%Y')
+  "timestamp" => Date.strptime('04-06-2018', '%d-%m-%Y')
 })
 transaction4.save()
 
