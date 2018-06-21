@@ -20,3 +20,16 @@ tr:hover {background-color: #f5f5f5;}
 .material-icons {
   color: black;
 }
+
+td a {
+  color: black;
+  text-decoration: none;
+}
+
+.merchant_table tr:hover {
+  background-color: white;
+}
+
+.merchant_link a:hover {
+  color: #2b90d9;
+}
