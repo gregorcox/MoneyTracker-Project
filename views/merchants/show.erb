@@ -1,6 +1,6 @@
 <div class="container">
 
-<h1><%= @merchant.name %></h1>
+<h1><%= @merchant.name %> <a href="/merchants/<%=@merchant.id  %>/edit"><i class="material-icons" title="Edit">mode_edit</i></a> <a href="/merchants/<%=@merchant.id  %>/edit"><i class="material-icons" title="Edit">delete</i></a></h1>
 
 <h4>Transactions at <%= @merchant.name  %>:</h4>
 
