@@ -93,6 +93,16 @@ merchant7 = Merchant.new({
 })
 merchant7.save()
 
+merchant8 = Merchant.new({
+  "name" => "AirBnB"
+})
+merchant8.save()
+
+merchant9 = Merchant.new({
+  "name" => "Netflix"
+})
+merchant9.save()
+
 transaction1 = Transaction.new({
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id,
@@ -156,6 +166,22 @@ transaction8 = Transaction.new({
   "timestamp" => Date.strptime('05-05-2018', '%d-%m-%Y')
 })
 transaction8.save()
+
+transaction9 = Transaction.new({
+  "merchant_id" => merchant8.id,
+  "tag_id" => tag9.id,
+  "amount" => 4550,
+  "timestamp" => Date.strptime('03-02-2018', '%d-%m-%Y')
+})
+transaction9.save()
+
+transaction10 = Transaction.new({
+  "merchant_id" => merchant9.id,
+  "tag_id" => tag5.id,
+  "amount" => 699,
+  "timestamp" => Date.strptime('01-05-2018', '%d-%m-%Y')
+})
+transaction10.save()
 
 binding.pry
 nil
