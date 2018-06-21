@@ -21,7 +21,7 @@ class Transaction
     for transaction in transactions_array
       total = total + transaction.amount()
     end
-    return total
+    return total / 100.0
   end
 
   def tag()
