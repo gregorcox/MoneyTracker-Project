@@ -24,6 +24,26 @@ class Transaction
     return total / 100.0
   end
 
+  def self.calculate_total_by_merchant(array, merchant)
+    total = 0
+    for transaction in array
+      if transaction.merchant.name == merchant.name()
+        total = total + transaction.amount()
+      end
+    end
+    return total / 100.0
+  end
+
+  def self.calculate_total_by_tag(array, tag)
+    total = 0
+    for transaction in array
+      if transaction.tag.name == tag.name()
+        total = total + transaction.amount()
+      end
+    end
+    return total / 100.0
+  end
+
   def tag()
     sql = "SELECT * FROM tags WHERE id = $1"
     values = [@tag_id]
