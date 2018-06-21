@@ -1,7 +1,11 @@
 <div class="container">
 
-<h1><%= @tag.name %> <a href="/tags/<%=@tag.id  %>/edit"><i class="material-icons" title="Edit">mode_edit</i></a> <a href="/tags/<%=@tag.id  %>/delete"><i class="material-icons" title="Delete">delete</i></a></h1>
-
+<h1><%= @tag.name %> <a href="/tags/<%=@tag.id  %>/edit"><i class="material-icons" title="Edit">mode_edit</i></a>
+<form class="delete-button" action="/tags/<%=@tag.id  %>/delete" method="post">
+  <button type="submit">
+    <i class="material-icons" title="Delete">delete</i>
+  </button>
+</form>
 
 <h4><%= @tag.name  %> transactions:</h4>
 
@@ -32,13 +36,7 @@
     <td></td>
     <td></td>
     <td></td>
-    <% total = 0  %>
-    <% for transaction in @transactions  %>
-      <% if transaction.tag.name == @tag.name()  %>
-        <% total = total + transaction.amount  %>
-      <% end %>
-    <% end  %>
-    <td><strong>£<%= total / 100.00  %></strong></td>
+    <td><strong>£<%= Transaction.calculate_total(@transactions)  %></strong></td>
   </tr>
 </table>
 

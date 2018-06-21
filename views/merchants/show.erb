@@ -31,13 +31,7 @@
     <td></td>
     <td></td>
     <td></td>
-    <% total = 0  %>
-    <% for transaction in @transactions  %>
-      <% if transaction.merchant.name == @merchant.name()  %>
-        <% total = total + transaction.amount  %>
-      <% end %>
-    <% end  %>
-    <td><strong>£<%= total / 100.00  %></strong></td>
+    <td><strong>£<%= Transaction.calculate_total(@transactions)  %></strong></td>
   </tr>
 
 </table>
