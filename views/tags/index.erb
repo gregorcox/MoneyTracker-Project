@@ -1,13 +1,15 @@
 <div class="container">
 
-<h1>Tags</h1>
+<h1>Tags A-Z</h1>
 
+<table class="merchant_table">
 <% for tag in @tags %>
-  <p><strong>Name:</strong> <a href="/tags/<%=tag.id %>"><%= tag.name %></a> (<a href="/tags/<%=tag.id  %>/edit">Edit</a>)</p>
-  <p><form action="/tags/<%= tag.id %>/delete" method="POST">
-      <input type="submit" value="Delete" /></p>
+  <tr>
+    <td class="merchant_link"><a href="/tags/<%=tag.id %>"><%= tag.name %></a>
+  </tr>
 <% end %>
+</table>
 
-<p> <a href="/tags/new"> Create a custom tag</a> </p>
+<h4> <a href="/tags/new"> <i class="material-icons">add</i>Create a custom tag</a> </h4>
 
 </div>
