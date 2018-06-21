@@ -36,7 +36,7 @@
     <td></td>
     <td></td>
     <td></td>
-    <td><strong>£<%= Transaction.calculate_total(@transactions)  %></strong></td>
+    <td><strong>£<%= Transaction.calculate_total_by_tag(@transactions, @tag)  %></strong></td>
   </tr>
 </table>
 
