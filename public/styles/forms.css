@@ -11,6 +11,7 @@ form {
   color: white;
   padding: 12px 24px;
   margin: 5px auto;
+  cursor: pointer;
 }
 
 input {
