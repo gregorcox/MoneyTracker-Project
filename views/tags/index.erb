@@ -5,7 +5,7 @@
 <table class="merchant_table">
 <% for tag in @tags %>
   <tr>
-    <td class="merchant_link"><a href="/tags/<%=tag.id %>"><%= tag.name %></a>
+    <td class="merchant_link"><a href="/tags/<%=tag.id %>"><%= tag.name.capitalize %></a>
   </tr>
 <% end %>
 </table>
