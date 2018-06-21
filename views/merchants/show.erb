@@ -2,7 +2,7 @@
 
 <h1><%= @merchant.name %> <a href="/merchants/<%=@merchant.id  %>/edit"><i class="material-icons" title="Edit">mode_edit</i></a>
 <form class="delete-button" action="/merchants/<%=@merchant.id  %>/delete" method="post">
-  <button type="submit">
+  <button type="submit" style="border:none;">
     <i class="material-icons" title="Delete">delete</i>
   </button>
 </form>
@@ -27,7 +27,7 @@
       <td><%= transaction.pretty_amount() %></td>
       <td><a href="/transactions/<%=transaction.id  %>/edit"> <i class="material-icons" title="Edit">mode_edit</i></a></td>
       <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
-        <button type="submit" <i class="material-icons" title="Delete">delete</i></button>
+        <button type="submit" <i class="material-icons" title="Delete" style="border:none;">delete</i></button>
       </form></td>
     </tr>
     <% end  %>

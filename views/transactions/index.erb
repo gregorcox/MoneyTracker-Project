@@ -19,7 +19,7 @@
     <td><%= transaction.pretty_amount() %></td>
     <td><a href="/transactions/<%=transaction.id  %>/edit"> <i class="material-icons" title="Edit">mode_edit</i></a></td>
     <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
-        <button type="submit" title="Delete"<i class="material-icons">delete</i></button>
+        <button type="submit" title="Delete" style="border:none;"<i class="material-icons">delete</i></button>
       </form></td>
   </tr>
   <% end %>
