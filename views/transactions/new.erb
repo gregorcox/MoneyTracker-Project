@@ -5,7 +5,7 @@
 <form action="/transactions" method="post">
 
   <label>
-  Select a merchant:
+  Select a merchant<span class="required">*</span>
     <select name="merchant_id">
       <% for merchant in @merchants %>
       <option value="<%= merchant.id %>"><%= merchant.name %></option>
@@ -16,7 +16,7 @@
   <br>
 
   <label>
-    Select a tag:
+    Select a tag<span class="required">*</span>
     <select name="tag_id">
       <% for tag in @tags %>
       <option value="<%= tag.id %>"><%= tag.name %></option>
@@ -26,12 +26,12 @@
 
   <br>
 
-  <label for="amount">Amount £:</label>
+  <label for="amount">Amount<span class="required">*</span>£</label>
   <input id="amount" type="number" step="0.01" name="amount" placeholder="0.00" required/>
 
   <br>
 
-  <label for="timestamp">Date:</label>
+  <label for="timestamp">Date<span class="required">*</span></label>
   <input type="date" name="timestamp" id="timestamp" required/>
 
   <br>
