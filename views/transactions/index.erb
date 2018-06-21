@@ -27,14 +27,12 @@
     <td></td>
     <td></td>
     <td></td>
-    <% total = 0  %>
-    <% for transaction in @transactions  %>
-    <% total = total + transaction.amount  %>
-    <% end  %>
-    <td><strong>£<%= total / 100.00  %></strong></td>
+    <td><strong>£<%= Transaction.calculate_total(@transactions) / 100.00  %></strong></td>
   </tr>
 </table>
 
 <h4> <a href="/transactions/new"> <i class="material-icons">add</i>Add a new transaction</a> </h4>
+
+
 
 </div>
