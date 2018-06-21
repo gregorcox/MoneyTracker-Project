@@ -1,6 +1,11 @@
 <div class="container">
 
-<h1><%= @merchant.name %> <a href="/merchants/<%=@merchant.id  %>/edit"><i class="material-icons" title="Edit">mode_edit</i></a> <a href="/merchants/<%=@merchant.id  %>/edit"><i class="material-icons" title="Edit">delete</i></a></h1>
+<h1><%= @merchant.name %> <a href="/merchants/<%=@merchant.id  %>/edit"><i class="material-icons" title="Edit">mode_edit</i></a>
+<form class="delete-button" action="/merchants/<%=@merchant.id  %>/delete" method="post">
+  <button type="submit">
+    <i class="material-icons" title="Delete">delete</i>
+  </button>
+</form>
 
 <h4>Transactions at <%= @merchant.name  %>:</h4>
 
