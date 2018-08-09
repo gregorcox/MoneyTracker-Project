@@ -12,4 +12,7 @@ The application was built during my time at CodeClan as one of three web applica
 * HTML/CSS
 * postgreSQL (database management)
 
+## Screenshot of the home page
+![home page screenshot](public/images/home_screenshot.png "Screenshot of all transactions")
+
 
